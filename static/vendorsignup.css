@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    box-sizing:border-box;
+}
+.regish{
+    color:rgb(33, 2, 21);
+    text-align:center;
+}
+.mbor{
+    border:1px solid rgb(252, 115, 209);
+    box-shadow: -5px -5px 5px 5px rgb(233, 108, 108);
+    padding:3%;
+    background-color:rgb(242, 198, 235);
+}
+.buttons{
+    margin-left:45%;
+    margin-top:3%;
+}
+.title1{
+    color:rgb(248, 88, 208);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style:italic;
+}
+.error-message{
+    color:rgb(39, 37, 38);
+    margin-top:5px;
+}

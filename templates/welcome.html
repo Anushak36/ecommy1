@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skins</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1520052205864-92d242b3a76b?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: fit;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -100%);
+    text-align: top;
+    color: rgb(90, 8, 39);
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e8c9de;
+    color: rgb(213, 117, 117);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease;
+  }
+  .button:hover {
+    background-color: #c59aac;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to skins </h1>
+    <p>Make your skin feel Special</p>
+    <a href="{{url_for('userdashboard')}}" class="button">Explore</a>
+  </div>
+</body>
+</html>

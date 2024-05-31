@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5e1e8;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #f7d3f2;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #270514;
+        }
+        .invoice-details {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .invoice-details label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .invoice-details span {
+            font-weight: bold;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice</h1>
+        <div class="invoice-details">
+            <label><b>Username:</b> {{count[0]}}</label>
+            <br><br>
+            <label><b>Mobile No:</b> {{count[1]}}</label>
+            <br><br>
+            <label><b>Address:</b> {{count[2]}}</label>
+            <br><br>
+            <label><b>Email:</b> {{count[3]}}</label>
+            <br><br>
+            <label><b>Order Id:</b> {{count[4]}}</label>
+            <br><br>
+            <label><b>Item id:</b> {{count[5]}}</label>
+            <br><br>
+            <label><b>Quantity:</b> {{count[7]}}</label>
+            <br><br>
+            <label><b>Total Price: </b> {{count[8]}}</label>
+            <br><br>
+            <label><b>Category: </b> {{count[6]}}</label>
+            <br><br>
+            <label><b>Discription:</b> {{count[11]}}</label>
+        </div>
+    </div>
+</body>
+</html>

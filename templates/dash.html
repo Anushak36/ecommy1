@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Your Skin Feel Special</title>
+    <link rel="stylesheet" href="/static//style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">Skins</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <a href="{{url_for('viewcart')}}">ViewCart</a>
+                <li><a href="{{url_for('orders')}}">Orders</a></li>
+                <li class="dropdown">
+                    <a href="#">Payment</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">UPI Payment</a></li>
+                        <li><a href="#">Offline Payment</a></li>
+                        <li><a href="#">Netbanking</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Cart</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Profile</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Rewards</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Giftcards</a></li>
+                    </ul>
+                </li>
+                {% if not session.get('user') %}
+                <li><a href="#">Login</a></li>
+                {% endif %}
+                <li class="dropdown">
+                    <a href="#">Category</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{url_for('category',type='Makeup')}}">Makeup</a></li>
+                        <li><a href="{{url_for('category',type='Skincaree')}}">Skincare</a></li>
+                        <li><a href="{{url_for('category',type='Haircare')}}">Haircare</a></li>
+                        <li><a href="{{url_for('category',type='BodyCare')}}">BodyCare</a></li>
+                        <li><a href="{{url_for('category',type='Beauty')}}">Beauty</a></li>
+                        <li><a href="{{url_for('category',type='Combos')}}">Combos</a></li>
+                        <li><a href="{{url_for('category',type='Luxury Products')}}">Luxury Products</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-search">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+                {{ session.get('user') }}
+            </div>
+        </nav>
+    </header>
+     {% block content %}
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Make Your SKin feel Special</h1>
+            <a href="#" class="explore-btn">Explore</a>
+        </div>
+    </section>
+
+    <main>
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-item" style="background-image: url('https://png.pngtree.com/background/20230414/original/pngtree-makeup-skin-care-products-cosmetics-beauty-photography-advertising-background-picture-image_2424108.jpg');"></div>
+                <div class="carousel-item" style="background-image: url('https://img.freepik.com/premium-photo/many-beauty-fashion-cosmetic-makeup-lotion-bottles-product-with-skin-care-healthcare-concept-falling-shopping-cart-3d-rendering_476612-20258.jpg');"></div>
+                <div class="carousel-item" style="background-image: url('https://vedix.com/cdn/shop/articles/Ayurvedic-Hair-Care.jpg?v=1591969689');"></div>
+            </div>
+            <button class="carousel-control prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="moveSlide(1)">&#10095;</button>
+        </section>
+
+        <section class="outer-sec">
+            {% if count %}
+            {% for i in count %}
+                 <div class="item-container">
+                    <div class="item-top">
+                        <div class="top-left-logo">
+                            <img src="./logo.png" alt="">
+                        </div>
+                        <div class="top-right-cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </div> 
+                    <div class="main-item">
+                        <a href="{{url_for('discription',item_id=i[0])}}"><img src="{{url_for('static',filename=i[7])}}" width="50%" height="70%" alt=""></a>
+                    </div>
+                    <a href="{{url_for('discription',item_id=i[0])}}"><h2 class="item-heading" name="name">
+                        {{i[1]}}
+                    </h2></a>
+                    <p class="item-description" name="category">
+                        {{i[4]}}
+                    </p>
+                    <p class="item-description" name="stock">
+                        {{i3}}
+                    </p>
+                    <ul class="rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </ul>
+                    <p class="item-price" name="price"><sup>₹</sup>{{i[5]}}</p>
+                    <a href="#">
+                    <button class="item-cart-btn">Buy Now</button><br><br></a>{{i[0]}}
+                    <a href="{{url_for('cart',item_id=i[0],item_name=i[1],dis=i[2],category=i[4],price=i[5],qyt=i[3],imgid=i[7])}}"><button class="item-cart-btn">ADD Cart</button></a>
+                    </div>
+                  
+                    <!-- <button class="item-cart-btn">Buy Now</button> -->
+                </div>
+            {% endfor %} 
+            {% endif %} 
+
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
+            currentIndex = (currentIndex + step + totalSlides) % totalSlides;
+
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+   
+    {% endblock %}
+    
+    
+   
+</body>
+</html>
