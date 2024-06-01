@@ -41,11 +41,6 @@ CREATE TABLE `additems` (
 -- Dumping data for table `additems`
 --
 
-LOCK TABLES `additems` WRITE;
-/*!40000 ALTER TABLE `additems` DISABLE KEYS */;
-INSERT INTO `additems` VALUES (_binary 'ˆy¥þ\ï—À>º0}\Û','mac lipstick','hydrating',12,'makeup',567,'anushakatta243@gmail.com','2Yb6Hs.avif'),(_binary '\"q¯–]\ï—À>º0}\Û',' Kerastase shampoo','For saloon like hair',20,'haircare',3335,'anushakatta243@gmail.com','3Cz6Ii.jpeg'),(_binary '1²™¿ÿ\ï—À>º0}\Û','Dr.Sheths suncreen','Protects you from Uv Rays',12,'skincare',500,'anushakatta243@gmail.com','3Wl6Sg.webp');
-/*!40000 ALTER TABLE `additems` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `orders`
@@ -76,11 +71,7 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (_binary 'É§\ØL¢\ï—À>º0}\Û',_binary 'ˆy¥þ\ï—À>º0}\Û','mac lipstick',1,567.0000,'anushakatta243@gmail.com','makeup','hydrating','2Yb6Hs.avif'),(_binary 'Ú““¢\ï—À>º0}\Û',_binary 'ˆy¥þ\ï—À>º0}\Û','mac lipstick',1,567.0000,'anushakatta243@gmail.com','makeup','hydrating','2Yb6Hs.avif');
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
-UNLOCK TABLES;
+
 
 --
 -- Table structure for table `user`
@@ -104,11 +95,7 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('anusha',1234567891,'anushakatta243@gmail.com','vijayawada',_binary '$2b$12$SF.MkP.ilL0St4dycHS/bOkRnQ54Ofbox7RbSxWc0NmtxGDsTG25i');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
+
 
 --
 -- Table structure for table `vendor`
@@ -132,11 +119,7 @@ CREATE TABLE `vendor` (
 -- Dumping data for table `vendor`
 --
 
-LOCK TABLES `vendor` WRITE;
-/*!40000 ALTER TABLE `vendor` DISABLE KEYS */;
-INSERT INTO `vendor` VALUES ('anushakatta243@gmail.com','anusha',1234567891,'vijayawada',_binary '$2b$12$DIYYZSo5Pj2okcnjcUJqq.s7weFqhsp1fcdxIsvHxqfeDWt34jSDC');
-/*!40000 ALTER TABLE `vendor` ENABLE KEYS */;
-UNLOCK TABLES;
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
